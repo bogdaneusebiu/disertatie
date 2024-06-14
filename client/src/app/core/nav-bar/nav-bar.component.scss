@@ -10,3 +10,16 @@
   top: -12px;
   right: -18px;
 }
+
+a {
+  text-decoration: none;
+  color: rgb(53, 50, 50);
+
+  &.active{
+    color: rgb(235, 154, 5);
+  }
+}
+
+.logo {
+  cursor: pointer;
+}
