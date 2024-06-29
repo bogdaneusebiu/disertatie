@@ -10,8 +10,6 @@ import { IPagination } from './shared/Models/pagination';
 })
 export class AppComponent implements OnInit{
 
-  title = 'Disertatie';
-
   constructor( ) {}
 
   ngOnInit(): void {
