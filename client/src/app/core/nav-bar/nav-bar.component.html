@@ -7,9 +7,9 @@
     <a class="p-2" routerLink="/test-error">Errors</a>
   </nav>
   <div class="d-flex align-item-center">
-    <a class="position-relative text-decoration-none mx-4">
+    <a routerLink="/basket" class="position-relative text-decoration-none mx-4">
       <i class="fa fa-shopping-cart fa-2x mr-5 text-dark "></i>
-      <div class="cart-no">5</div>
+      <div *ngIf="(basket$ | async) as basket" class="cart-no">{{basket.items.length}}</div>
     </a>
     <a class="btn btn-outline-secondary mx-2" >Login</a>
     <a class="btn btn-outline-secondary" >Sign up</a>
