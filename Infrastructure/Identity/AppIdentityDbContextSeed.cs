@@ -1,5 +1,6 @@
 using Core.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
+using StackExchange.Redis;
 
 namespace Infrastructure.Identity
 {
@@ -7,9 +8,7 @@ namespace Infrastructure.Identity
     {
         public static async Task SeedUserAsync(UserManager<AppUser> userManager)
         {
-            if (!userManager.Users.Any())
-            {
-                var user = new AppUser
+            var user = new AppUser
                 {
                     DisplayName = "Bob",
                     Email = "admin@test.com",
@@ -24,8 +23,23 @@ namespace Infrastructure.Identity
                         ZipCode = "800802"
                     }
                 };
+            if (!userManager.Users.Any())
+            {
+                await userManager.CreateAsync(user, "Pa$$w0rd");         
+            }
+            await userManager.AddToRoleAsync(user, "Administrator");
+        }
 
-                await userManager.CreateAsync(user, "Pa$$w0rd");
+        public static async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
+        {
+            if(!roleManager.Roles.Any())
+            {
+                var roles = new string[] {"Administrator", "User"};
+                
+                foreach (string role in roles)
+                {
+                    await roleManager.CreateAsync (new IdentityRole(role));
+                }
             }
         }
     }

@@ -18,8 +18,10 @@ namespace API.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService, IMapper mapper)
+        private readonly RoleManager<IdentityRole> _roleManager;
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService, IMapper mapper, RoleManager<IdentityRole> roleManager)
         {
+            _roleManager = roleManager;
             _mapper = mapper;
             _tokenService = tokenService;
             _signInManager = signInManager;
@@ -33,10 +35,11 @@ namespace API.Controllers
         {
 
             var user = await _userManager.FindByEmailFromClaimsPrincipal(User);
+            var userRoles = await _userManager.GetRolesAsync(user);
 
             return new UserDto{
                 Email = user.Email,
-                Token = _tokenService.CreateToken(user),
+                Token = _tokenService.CreateToken(user, userRoles),
                 DisplayName = user.DisplayName
             };
         }
@@ -82,6 +85,7 @@ namespace API.Controllers
             }
 
             var result = await _signInManager.CheckPasswordSignInAsync(user, loginDTO.Password, false);
+            var userRoles = await _userManager.GetRolesAsync(user);
 
             if (!result.Succeeded)
             {
@@ -90,7 +94,7 @@ namespace API.Controllers
 
             return new UserDto{
                 Email = user.Email,
-                Token = _tokenService.CreateToken(user),
+                Token = _tokenService.CreateToken(user, userRoles),
                 DisplayName = user.DisplayName
             };
         }
@@ -111,14 +115,17 @@ namespace API.Controllers
 
             var result = await _userManager.CreateAsync(user, registerDto.Password);
 
-            if (!result.Succeeded)
+            var result2 = await _userManager.AddToRoleAsync(user, "User");
+            var userRoles = new List<string>{"User"};
+
+            if (!result.Succeeded || !result2.Succeeded)
             {
                 return BadRequest(new ApiResponse(400));
             }
 
             return new UserDto{
                 DisplayName = user.DisplayName,
-                Token=_tokenService.CreateToken(user),
+                Token=_tokenService.CreateToken(user, userRoles),
                 Email = user.Email,
             };
         }
