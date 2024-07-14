@@ -1,0 +1,51 @@
+
+<div class="container-fluid px-4 mt-4">
+  <ng-container *ngIf="!orders">
+    <div class="card mb-4">
+      <div class="card-body">
+        <h3>There are no orders recorded.</h3>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="orders">
+    <div class="card mb-4">
+      <div class="card-header d-flex">
+        <i class="fa fa-calendar fa-2x mx-3" aria-hidden="true" ></i>
+        <h3>Your Orders</h3>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover align-items-center text-center" >
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Date</th>
+              <th scope="col">Total</th>
+              <th scope="col">Address</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let order of orders">
+            <tr>
+              <th scope="row">
+                <a routerLink="/orders/{{order.id}}">{{order.id}}</a>
+              </th>
+              <td>{{order.orderDate | date: 'medium'}}</td>
+              <td>{{order.total | currency: 'EUR'}}</td>
+              <td>{{order.shipToAddress.street + ", " + order.shipToAddress.city}}</td>
+              <td>{{order.status}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card mb-4">
+      <div class="card-body">
+          If you have any questions regarding your orders or if you have encountered a issue please
+          <a routerLink="">contact us using this link</a>
+          .
+      </div>
+    </div>
+  </ng-container>
+</div>
+

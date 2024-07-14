@@ -13,7 +13,7 @@
 
 a {
   text-decoration: none;
-  color: rgb(53, 50, 50);
+  color: rgb(226, 226, 226);
 
   &.active{
     color: rgb(235, 154, 5);
@@ -22,4 +22,8 @@ a {
 
 .logo {
   cursor: pointer;
+}
+
+i{
+  color: white;
 }

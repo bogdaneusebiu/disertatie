@@ -1,0 +1,57 @@
+<ng-container *ngIf="basket$ | async">
+  <div class="card mb-4">
+    <div class="card-header py-3">
+      <h5 class="mb-0">Shopping Cart</h5>
+    </div>
+    <div class="card-body" *ngFor="let item of (basket$ | async).items">
+      <div class="row">
+        <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+          <div class="bg-image hover-overlay hover-zoom ripple rounded">
+            <img src="{{item.pictureUrl}}" alt="{{item.productName}}" class="img-fluid  w-100"/>
+            <a routerLink="/shop/{{item.id}}">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+          <a routerLink="/shop/{{item.id}}" class="text-dark">
+            <strong>{{item.productName}}</strong>
+          </a>
+          <span class="text-muted font-italic d-block" style="opacity: 0.5;font-style: italic;">Brand: {{item.brand}}</span>
+          <span class="text-muted font-italic d-block mb-4" style="opacity: 0.5;font-style: italic;">Type: {{item.type}}</span>
+          <br>
+          <button *ngIf="isBasket" type="button" (click)="removeBasketItem(item)" class="btn btn-primary btn-sm me-1 mb-4" data-mdb-tooltip-init
+            title="Remove item">
+            <i class="fa fa-trash"></i>
+          </button>
+          <button *ngIf="isBasket" type="button" class="btn btn-danger btn-sm mb-4">
+            <i class="fa fa-heart"></i>
+          </button>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+           <div class="row mb-2">
+            <span class="text-center">Quantity</span>
+           </div>
+
+           <div class="d-flex align-items-center justify-content-center text-md mb-2">
+            <i *ngIf="isBasket" class="fa fa-minus-circle text-primary mx-2" (click)="decrementItemQuantity(item)" style="cursor: pointer; font-size: 1.5em;"></i>
+            <span class="font-weight-bolt" style="font-size: 1.5em;">{{item.quantity}}</span>
+            <i *ngIf="isBasket" class="fa fa-plus-circle text-primary mx-2" (click)="incrementItemQuantity(item)" style="cursor: pointer; font-size: 1.5em;"></i>
+          </div>
+          <p class="text-start text-md-center">
+            <strong>{{item.price | currency:'EUR'}}</strong>
+          </p>
+          <p class="text-start text-md-center mt-4">
+            Total: <strong>{{item.price*item.quantity | currency:'EUR'}}</strong>
+          </p>
+
+        </div>
+      </div>
+      <hr class="my-4" />
+    </div>
+  </div>
+</ng-container>
+
+

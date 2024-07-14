@@ -2,89 +2,48 @@
   <div *ngIf="(basket$ | async) === null">
     <p>There are no items in your basket</p>
   </div>
-
-  <div *ngIf="(basket$ | async) as basket">
-    <div class="pb-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 py-5 mb-1">
-            <div class="table-responsive">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th class="border-0  bg-light" scope="col">
-                      <div class="p-2 px-3 text-uppercase">
-                        Product
-                      </div>
-                    </th>
-                    <th class="border-0  bg-light" scope="col">
-                      <div class="py-2 text-uppercase">
-                        Price
-                      </div>
-                    </th>
-                    <th class="border-0  bg-light" scope="col">
-                      <div class="py-2 text-uppercase">
-                        Quantity
-                      </div>
-                    </th>
-                    <th class="border-0  bg-light" scope="col">
-                      <div class="py-2 text-uppercase">
-                        Total
-                      </div>
-                    </th>
-                    <th class="border-0  bg-light " scope="col">
-                      <div class="py-2 text-uppercase">
-                        Remove
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let item of basket.items">
-                    <th scope="row">
-                      <div class="p-2">
-                        <img src="{{item.pictureUrl}}" alt="{{item.productName}}" class="img-fluid mx-3" style="max-width: 50px;">
-                        <div class="ml-3 d-inline-block align-middle">
-                          <h5 class="mb-0">
-                            <a routerLink="/shop/{{item.id}}" class="text-dark">{{item.productName}}</a>
-                          </h5>
-                          <span class="text-muted font-italic d-block" style="opacity: 0.5;font-style: italic;">Brand: {{item.brand}}</span>
-                        </div>
-                      </div>
-                    </th>
-                    <td class="align-middle"><strong>{{item.price | currency:'EUR'}}</strong></td>
-                    <td class="align-middle">
-                      <div class="d-flex align-items-center">
-                        <i class="fa fa-minus-circle text-warning mx-2" (click)="decrementItemQuantity(item)" style="cursor: pointer; font-size: 1.5em;"></i>
-                        <span class="font-weight-bolt" style="font-size: 1.5em;">{{item.quantity}}</span>
-                        <i class="fa fa-plus-circle text-warning mx-2" (click)="incrementItemQuantity(item)" style="cursor: pointer; font-size: 1.5em;"></i>
-                      </div>
-                    </td>
-                    <td class="align-middle"><strong>{{item.price*item.quantity | currency:'EUR'}}</strong></td>
-                    <td class="align-items-center text-center">
-                      <a class="text-danger">
-                        <i class="fa fa-trash" (click)="removeBasketItem(item)" style="font-size: 2em; cursor: pointer;"></i>
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+  <section class="h-100 gradient-custom" *ngIf="(basket$ | async)">
+    <div class="container py-5">
+      <div class="row d-flex justify-content-center my-4">
+        <div class="col-md-8">
+          <app-basket-summary
+            (decrement)="decrementItemQuantity($event)"
+            (increment)="incrementItemQuantity($event)"
+            (remove)="removeBasketItem($event)"
+          ></app-basket-summary>
+          <div class="card mb-4">
+            <div class="card-body">
+              <p><strong>Expected shipping delivery</strong></p>
+              <p class="mb-0">12.10.2020 - 14.10.2020</p>
+            </div>
+          </div>
+          <div class="card mb-4 mb-lg-0">
+            <div class="card-body">
+              <p><strong>We accept</strong></p>
+              <img class="me-2" width="45px"
+                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                alt="Visa" />
+              <img class="me-2" width="45px"
+                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+                alt="American Express" />
+              <img class="me-2" width="45px"
+                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                alt="Mastercard" />
+              <img class="me-2" width="45px"
+                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.webp"
+                alt="PayPal acceptance mark" />
             </div>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-6 offset-6">
-            <app-order-totals></app-order-totals>
-            <a routerLink="/checkout" class="btn btn-primary py-2" style="width: 100%;">
+        <div class="col-md-4">
+          <app-order-totals></app-order-totals>
+            <a routerLink="/checkout" class="btn btn-outline-danger py-2" style="width: 100%;">
               Proceed to checkout
             </a>
-          </div>
         </div>
       </div>
     </div>
-  </div>
-
+  </section>
 </div>
 
 
