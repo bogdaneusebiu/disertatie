@@ -6,7 +6,7 @@ import { OrderIndividualComponent } from './order-individual/order-individual.co
 
 const routes: Routes = [
   {path:'', component: OrdersComponent},
-  {path:':id', component: OrderIndividualComponent, data: {breadcrumb: {alias: 'Order Details'}}}
+  {path:':id', component: OrderIndividualComponent, data: {breadcrumb: {alias: 'orderIndividual'}}}
 ]
 
 @NgModule({
