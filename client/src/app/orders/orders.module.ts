@@ -4,6 +4,8 @@ import { OrdersComponent } from './orders.component';
 import { OrdersRoutingModule } from './orders-routing.module';
 import { OrderIndividualComponent } from './order-individual/order-individual.component';
 import { SharedModule } from '../shared/shared.module';
+import { Angular2SmartTableModule } from 'angular2-smart-table';
+
 
 
 
@@ -15,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     OrdersRoutingModule,
-    SharedModule
+    SharedModule,
+    Angular2SmartTableModule
   ]
 })
 export class OrdersModule { }
