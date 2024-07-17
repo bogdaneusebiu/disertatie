@@ -17,7 +17,29 @@ services:
     ports:
       - 8081:8081
     depends_on:
-      - redis
-    
+      - redis  
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: appuser
+    ports:
+     - 5432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+     - 8080:8080
+
+  stripe-webhook:
+    image: stripe/stripe-cli
+    container_name: stripe-cli
+    command: "listen --api-key / --device-name Payment-webhook --forward-to https://localhost:5001/api/payments/webhook"
+    ports:
+     - 5002:5000
+
 volumes:
   redis-data:

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../core/environments/environment';
+import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, map } from 'rxjs';
 import { Basket, IBasket, IBasketItem, IBasketTotals } from '../shared/Models/basket';

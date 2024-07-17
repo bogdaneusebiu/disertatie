@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../core/environments/environment';
+import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, ReplaySubject } from 'rxjs';
 import { IUser } from '../shared/Models/user';

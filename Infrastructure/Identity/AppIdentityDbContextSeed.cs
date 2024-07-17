@@ -27,7 +27,12 @@ namespace Infrastructure.Identity
             {
                 await userManager.CreateAsync(user, "Pa$$w0rd");         
             }
-            await userManager.AddToRoleAsync(user, "Administrator");
+            var result = await userManager.AddToRoleAsync(user, "Administrator");
+
+            if(!result.Succeeded)
+            {
+                Console.WriteLine(result);
+            }
         }
 
         public static async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
