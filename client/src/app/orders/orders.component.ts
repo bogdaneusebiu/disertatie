@@ -9,7 +9,7 @@ import { IOrder } from '../shared/Models/order';
 })
 export class OrdersComponent implements OnInit{
 
-  orders : IOrder[];
+  orders : IOrder[] = [];
 
   constructor(private orderService: OrdersService){}
 

@@ -1,4 +1,27 @@
+networks:
+  dev:
+    driver: bridge
+
 services:
+
+  backend:
+    image: backend-service:latest
+    container_name: backend-service
+    ports:
+      - 5001:5001
+    environment:
+      - ASPNET_ENVIROMENT=Developement
+    depends_on:
+      - "db"
+    networks:
+      - dev
+
+  frontend-app:
+    image: client-front-end:latest
+    networks:
+      - dev
+    ports:
+      - 8000:80
 
   redis:
     image: redis:latest
@@ -27,19 +50,19 @@ services:
       POSTGRES_USER: appuser
     ports:
      - 5432:5432
+    networks:
+     - dev
+    volumes:
+      - app-data:/var/lib/postgresql/data
 
   adminer:
     image: adminer
     restart: always
+    networks:
+     - dev
     ports:
      - 8080:8080
-
-  stripe-webhook:
-    image: stripe/stripe-cli
-    container_name: stripe-cli
-    command: "listen --api-key / --device-name Payment-webhook --forward-to https://localhost:5001/api/payments/webhook"
-    ports:
-     - 5002:5000
-
+     
 volumes:
   redis-data:
+  app-data:

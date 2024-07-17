@@ -1,13 +1,13 @@
 
 <div class="container-fluid px-4 mt-4">
-  <ng-container *ngIf="!orders">
+  <ng-container *ngIf="orders.length <= 0">
     <div class="card mb-4">
       <div class="card-body">
         <h3>There are no orders recorded.</h3>
       </div>
     </div>
   </ng-container>
-  <ng-container *ngIf="orders">
+  <ng-container *ngIf="orders.length > 0">
     <div class="card mb-4">
       <div class="card-header d-flex">
         <i class="fa fa-calendar fa-2x mx-3" aria-hidden="true" ></i>

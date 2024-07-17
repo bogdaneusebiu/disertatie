@@ -45,6 +45,30 @@ namespace API.Controllers
             };
         }
 
+        
+        [Authorize]
+        [HttpPut]
+        public async Task <ActionResult<UserDto>> UpdateUser(UserDto userDto)
+        {
+            var user = await _userManager.FindByEmailWithAddressAsync(User);
+            var userRoles = await _userManager.GetRolesAsync(user);
+
+            user.DisplayName = userDto.DisplayName;
+            user.Email = userDto.Email;
+            user.PhoneNumber = userDto.PhoneNumber;
+
+            var result = await _userManager.UpdateAsync(user);
+
+            if(result.Succeeded)  return new UserDto{
+                Email = user.Email,
+                Token = _tokenService.CreateToken(user, userRoles),
+                DisplayName = user.DisplayName,
+                PhoneNumber = user.PhoneNumber
+            };
+            
+            return BadRequest("Problem updating the user "+ result.Errors);
+        }
+
         [HttpGet("emailexists")]
         public async Task<ActionResult<bool>> CheckEmailExistsAsync([FromQuery] string email)
         {
@@ -74,6 +98,7 @@ namespace API.Controllers
             
             return BadRequest("Problem updating the user "+ result.Errors);
         }
+
 
 
         [HttpPost("login")]

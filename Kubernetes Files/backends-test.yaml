@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: georgi-backend-pod
+  labels:
+    app: georgi
+    tier: backend
+spec:
+  containers:
+    - name: georgi-backend
+      image: client-front-end

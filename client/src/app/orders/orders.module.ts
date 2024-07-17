@@ -9,6 +9,7 @@ import { Angular2SmartTableModule } from 'angular2-smart-table';
 
 
 
+
 @NgModule({
   declarations: [
     OrdersComponent,
@@ -18,7 +19,7 @@ import { Angular2SmartTableModule } from 'angular2-smart-table';
     CommonModule,
     OrdersRoutingModule,
     SharedModule,
-    Angular2SmartTableModule
+    Angular2SmartTableModule,
   ]
 })
 export class OrdersModule { }

@@ -39,6 +39,7 @@ namespace API
             
             services.AddAutoMapper(typeof(MappingProfiles));
             
+            var corsOriginUrl = _config.GetConnectionString("CORS_ORIGIN_URL");
             services.AddSwaggerDocumentation();
             services.AddApplicationServices();
             services.AddIdentityServices(_config);

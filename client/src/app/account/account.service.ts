@@ -64,6 +64,11 @@ export class AccountService {
     )
   }
 
+  getCurrentUser()
+  {
+    return this.http.get<IUser>(this.baseUrl +'account');
+  }
+
   logout(){
     localStorage.removeItem('token');
     this.currentUserSource.next(null);
