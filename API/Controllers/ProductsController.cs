@@ -62,6 +62,13 @@ namespace API.Controllers
         }
 
         [Cached(600)]
+        [HttpGet ("brands/{id}")]
+        public async Task<ActionResult<ProductBrand>> GetBrand(int id)
+        {
+            return Ok(await  _unitOfWork.Repository<ProductBrand>().GetByIdAsync(id));
+        }
+
+        [Cached(600)]
         [HttpGet ("types")]
         public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes()
         {

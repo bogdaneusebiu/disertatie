@@ -75,6 +75,9 @@ export class ShopService {
 
   }
 
+  getBrand(id:string){
+    return this.http.get<IBrand>(this.baseUrl + 'products/brands/' + id);
+  }
   getProduct(id: number){
     const product = this.products.find(p=> p.id == id);
 

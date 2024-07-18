@@ -1,18 +1,42 @@
 [
   {
     "Id": 1,
-    "Name": "Boards"
+    "Name": "Diagnostic Imaging"
   },
   {
     "Id": 2,
-    "Name": "Hats"
+    "Name": "Cardiology"
   },
   {
     "Id": 3,
-    "Name": "Boots"
+    "Name": "Emergency Medicine"
   },
   {
     "Id": 4,
-    "Name": "Gloves"
+    "Name": "Anesthesia"
+  },
+  {
+    "Id": 5,
+    "Name": "Respiratory Care"
+  },
+  {
+    "Id": 6,
+    "Name": "Laboratory Equipment"
+  },
+  {
+    "Id": 7,
+    "Name": "Patient Monitoring"
+  },
+  {
+    "Id": 8,
+    "Name": "Surgery"
+  },
+  {
+    "Id": 9,
+    "Name": "Diagnostics"
+  },
+  {
+    "Id": 10,
+    "Name": "Orthopedics"
   }
 ]
