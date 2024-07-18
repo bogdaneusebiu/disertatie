@@ -1,146 +1,82 @@
 [
-  {
-    "Name": "Angular Speedster Board 2000",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 200,
-    "PictureUrl": "images/products/sb-ang1.png",
-    "ProductTypeId": 1,
-    "BrandId": 1
-  },
-  {
-    "Name": "Green Angular Board 3000",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 150,
-    "PictureUrl": "images/products/sb-ang2.png",
-    "ProductTypeId": 1,
-    "BrandId": 1
-  },
-  {
-    "Name": "Core Board Speed Rush 3",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "images/products/sb-core1.png",
-    "ProductTypeId": 1,
-    "BrandId": 2
-  },
-  {
-    "Name": "Net Core Super Board",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 300,
-    "PictureUrl": "images/products/sb-core2.png",
-    "ProductTypeId": 1,
-    "BrandId": 2
-  },
-  {
-    "Name": "React Board Super Whizzy Fast",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 250,
-    "PictureUrl": "images/products/sb-react1.png",
-    "ProductTypeId": 1,
-    "BrandId": 4
-  },
-  {
-    "Name": "Typescript Entry Board",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 120,
-    "PictureUrl": "images/products/sb-ts1.png",
-    "ProductTypeId": 1,
-    "BrandId": 5
-  },
-  {
-    "Name": "Core Blue Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 10,
-    "PictureUrl": "images/products/hat-core1.png",
-    "ProductTypeId": 2,
-    "BrandId": 2
-  },
-  {
-    "Name": "Green React Woolen Hat",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 8,
-    "PictureUrl": "images/products/hat-react1.png",
-    "ProductTypeId": 2,
-    "BrandId": 4
-  },
-  {
-    "Name": "Purple React Woolen Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 15,
-    "PictureUrl": "images/products/hat-react2.png",
-    "ProductTypeId": 2,
-    "BrandId": 4
-  },
-  {
-    "Name": "Blue Code Gloves",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 18,
-    "PictureUrl": "images/products/glove-code1.png",
-    "ProductTypeId": 4,
-    "BrandId": 3
-  },
-  {
-    "Name": "Green Code Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 15,
-    "PictureUrl": "images/products/glove-code2.png",
-    "ProductTypeId": 4,
-    "BrandId": 3
-  },
-  {
-    "Name": "Purple React Gloves",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
-    "Price": 16,
-    "PictureUrl": "images/products/glove-react1.png",
-    "ProductTypeId": 4,
-    "BrandId": 4
-  },
-  {
-    "Name": "Green React Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 14,
-    "PictureUrl": "images/products/glove-react2.png",
-    "ProductTypeId": 4,
-    "BrandId": 4
-  },
-  {
-    "Name": "Redis Red Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 250,
-    "PictureUrl": "images/products/boot-redis1.png",
-    "ProductTypeId": 3,
-    "BrandId": 6
-  },
-  {
-    "Name": "Core Red Boots",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 189.99,
-    "PictureUrl": "images/products/boot-core2.png",
-    "ProductTypeId": 3,
-    "BrandId": 2
-  },
-  {
-    "Name": "Core Purple Boots",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 199.99,
-    "PictureUrl": "images/products/boot-core1.png",
-    "ProductTypeId": 3,
-    "BrandId": 2
-  },
-  {
-    "Name": "Angular Purple Boots",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 150,
-    "PictureUrl": "images/products/boot-ang2.png",
-    "ProductTypeId": 3,
-    "BrandId": 1
-  },
-  {
-    "Name": "Angular Blue Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "images/products/boot-ang1.png",
-    "ProductTypeId": 3,
-    "BrandId": 1
-  }
+      {
+        "Name": "Saltea cu vacuum cu husa lavabila si curele de fixare",
+        "Description": "Această saltea medicală este proiectată pentru confortul maxim al pacientului. Dispune de sistem de vacuum pentru ajustarea fermității, husă lavabilă pentru igienă și curele de fixare pentru stabilitate.",
+        "Price": 2000,
+        "PictureUrl": "/images/saltea_vacuum.jpg",
+        "ProductTypeId": 1,
+        "BrandId": 1
+      },
+      {
+        "Name": "ECG Machine cu display digital si baterie reincarcabila",
+        "Description": "Aparatul ECG oferă o monitorizare precisă a activității cardiace cu ajutorul display-ului digital clar. Bateria reîncărcabilă asigură mobilitate și autonomie pe termen lung.",
+        "Price": 1500,
+        "PictureUrl": "/images/ecg_machine.jpg",
+        "ProductTypeId": 2,
+        "BrandId": 2
+      },
+      {
+        "Name": "Defibrilator automat cu instructiuni vocale",
+        "Description": "Defibrilatorul automat este echipat cu tehnologie de ultimă generație și oferă instrucțiuni vocale clare în situații de urgență. Ideal pentru salvarea rapidă a vieții în caz de stop cardiac.",
+        "Price": 1000,
+        "PictureUrl": "/images/defibrilator.jpg",
+        "ProductTypeId": 3,
+        "BrandId": 3
+      },
+      {
+        "Name": "Pompa de seringi cu control precis al debitului",
+        "Description": "Pompa de seringi permite administrarea precisă a medicamentelor, având control complet al debitului. Este esențială în tratamentele care necesită doze exacte și constante.",
+        "Price": 500,
+        "PictureUrl": "/images/pompa_seringi.jpg",
+        "ProductTypeId": 4,
+        "BrandId": 4
+      },
+      {
+        "Name": "Monitor de pacient cu ecran tactil de 15 inch",
+        "Description": "Monitorul de pacient oferă o interfață intuitivă cu ecran tactil de 15 inch, permitând monitorizarea detaliată a semnelor vitale și a stării pacientului în timp real.",
+        "Price": 2000,
+        "PictureUrl": "/images/monitor_pacient.jpg",
+        "ProductTypeId": 5,
+        "BrandId": 5
+      },
+      {
+        "Name": "Ventilator cu moduri de ventilatie avansate",
+        "Description": "Ventilator medical cu multiple moduri de ventilație avansate, oferind suport respirator optim pacienților.",
+        "Price": 1800,
+        "PictureUrl": "/images/ventilator.jpg",
+        "ProductTypeId": 6,
+        "BrandId": 6
+      },
+      {
+        "Name": "Aparat de radiografie cu generator de 300 kHz",
+        "Description": "Aparat de radiografie cu generator de 300 kHz, oferind imagini radiologice clare și detaliate.",
+        "Price": 2200,
+        "PictureUrl": "/images/aparat_radiografie.jpg",
+        "ProductTypeId": 7,
+        "BrandId": 7
+      },
+      {
+        "Name": "Tomograf computerizat cu 64 de slice-uri",
+        "Description": "Tomograf computerizat cu 64 de slice-uri, ideal pentru imagistica avansată și diagnosticarea complexă.",
+        "Price": 2500,
+        "PictureUrl": "/images/tomograf_computerizat.jpg",
+        "ProductTypeId": 8,
+        "BrandId": 8
+      },
+      {
+        "Name": "Ecografie portabila cu ecran color",
+        "Description": "Aparat de ecografie portabil, ușor de manevrat și cu ecran color de înaltă rezoluție, ideal pentru diagnosticul rapid și mobil.",
+        "Price": 1200,
+        "PictureUrl": "/images/ecografie_portabila.jpg",
+        "ProductTypeId": 9,
+        "BrandId": 9
+      },
+      {
+        "Name": "Monitor cardiac Holter pentru monitorizare continuă",
+        "Description": "Monitor cardiac Holter pentru monitorizare continuă a activității cardiace, înregistrând și analizând datele pentru diagnostic precis.",
+        "Price": 800,
+        "PictureUrl": "/images/monitor_holter.jpg",
+        "ProductTypeId": 10,
+        "BrandId": 10
+      }
 ]

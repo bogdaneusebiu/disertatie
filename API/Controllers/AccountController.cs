@@ -41,6 +41,7 @@ namespace API.Controllers
                 Email = user.Email,
                 Token = _tokenService.CreateToken(user, userRoles),
                 DisplayName = user.DisplayName,
+                PhoneNumber = user.PhoneNumber,
                 Roles = userRoles.ToList()
             };
         }
@@ -48,7 +49,7 @@ namespace API.Controllers
         
         [Authorize]
         [HttpPut]
-        public async Task <ActionResult<UserDto>> UpdateUser(UserDto userDto)
+        public async Task <ActionResult<UserDto>> UpdateUser(UserWithAddressDto userDto)
         {
             var user = await _userManager.FindByEmailWithAddressAsync(User);
             var userRoles = await _userManager.GetRolesAsync(user);
@@ -56,6 +57,13 @@ namespace API.Controllers
             user.DisplayName = userDto.DisplayName;
             user.Email = userDto.Email;
             user.PhoneNumber = userDto.PhoneNumber;
+
+            user.Address.City = userDto.City;
+            user.Address.Judet = userDto.Judet;
+            user.Address.Street = userDto.Street;
+            user.Address.ZipCode = userDto.ZipCode;
+            user.Address.FirstName = userDto.FirstName;
+            user.Address.LastName = userDto.LastName;
 
             var result = await _userManager.UpdateAsync(user);
 

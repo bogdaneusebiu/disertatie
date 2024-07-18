@@ -1,26 +1,42 @@
 [
   {
     "Id": 1,
-    "Name": "Angular"
+    "Name": "Siemens"
   },
   {
     "Id": 2,
-    "Name": "NetCore"
+    "Name": "Phillips"
   },
   {
     "Id": 3,
-    "Name": "VS Code"
+    "Name": "GE Healthcare"
   },
   {
     "Id": 4,
-    "Name": "React"
+    "Name": "Medtronic"
   },
   {
     "Id": 5,
-    "Name": "Typescript"
+    "Name": "Johnson & Johnson"
   },
   {
     "Id": 6,
-    "Name": "Redis"
+    "Name": "Roche Diagnostics"
+  },
+  {
+    "Id": 7,
+    "Name": "Abbott Laboratories"
+  },
+  {
+    "Id": 8,
+    "Name": "Baxter International"
+  },
+  {
+    "Id": 9,
+    "Name": "Thermo Fisher Scientific"
+  },
+  {
+    "Id": 10,
+    "Name": "Boston Scientific"
   }
 ]

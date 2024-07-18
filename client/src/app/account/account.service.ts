@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, ReplaySubject } from 'rxjs';
-import { IUser } from '../shared/Models/user';
+import { IUser, IUserWithAddress } from '../shared/Models/user';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { of } from 'rxjs/internal/observable/of';
@@ -85,5 +85,16 @@ export class AccountService {
 
   updateUserAddress(address: IAddress){
     return this.http.put<IAddress>(this.baseUrl + 'account/address', address);
+  }
+
+  updateUserAccount(user: IUserWithAddress){
+    return this.http.put(this.baseUrl + 'account', user).pipe(
+      map((user:IUser) =>{
+        if(user){
+          localStorage.setItem('token', user.token);
+          this.currentUserSource.next(user);
+        }
+      })
+    );
   }
 }
